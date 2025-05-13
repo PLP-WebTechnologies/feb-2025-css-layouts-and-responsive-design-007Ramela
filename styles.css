@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5faff;
+  color: #00334e;
+}
+
+header {
+  background-color: #0077b6;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "services"
+    "about";
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero {
+  grid-area: hero;
+  background: #caf0f8;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.services {
+  grid-area: services;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-item {
+  background: #ade8f4;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.about {
+  grid-area: about;
+  background: #90e0ef;
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0077b6;
+  color: white;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "hero"
+      "services"
+      "about";
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-areas:
+      "hero hero"
+      "services about";
+    grid-template-columns: 2fr 1fr;
+    padding: 3rem 4rem;
+  }
+}
